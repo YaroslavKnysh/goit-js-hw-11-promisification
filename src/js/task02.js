@@ -12,7 +12,7 @@ const toggleUserState = (allUsers, userName, callback) => {
     user.name === userName ? { ...user, active: !user.active } : user,
   );
 
-  callback(updatedUsers);
+  return Promise.resolve(updatedUsers);
 };
 
 const logger = updatedUsers => console.table(updatedUsers);
@@ -20,8 +20,8 @@ const logger = updatedUsers => console.table(updatedUsers);
 /*
  * Сейчас работает так
  */
-toggleUserState(users, 'Mango', logger);
-toggleUserState(users, 'Lux', logger);
+// toggleUserState(users, 'Mango', logger);
+// toggleUserState(users, 'Lux', logger);
 
 /*
  * Должно работать так
